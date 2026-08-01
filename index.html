@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALI TEST 123</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music/Kali Uchis - Moonlight (Official Lyric Video).mp3" type="audio/mpeg">
+</audio>
+
+<!-- ==========================
+LOADER
+========================== -->
+
+<div id="loader">
+
+    <h1>Preparing Something Special... ❤️</h1>
+
+</div>
+
+<!-- ==========================
+WELCOME
+========================== -->
+
+<section id="welcome">
+
+    <h2>For My Precious Princess ❤️</h2>
+
+    <h1>FATEMAH</h1>
+
+    <p>16 September ✨</p>
+
+    <button id="openBtn">
+
+        Open Your Surprise 🎁
+
+    </button>
+
+</section>
+
+<!-- ==========================
+PASSWORD
+========================== -->
+
+<section id="passwordPage">
+
+    <div class="card">
+
+        <h2>Enter Password 🔒</h2>
+
+        <p>Hint: Our Special Date ❤️</p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password">
+
+        <button onclick="checkPassword()">
+
+            Unlock ❤️
+
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+HERO
+========================== -->
+
+<section id="hero">
+
+    <h3>Happy Birthday 🎉</h3>
+
+    <h1>FATEMAH ❤️</h1>
+
+    <p>
+
+        You are my today and all of my tomorrows.
+
+    </p>
+
+    <button id="startBtn">
+
+        Start Journey 💖
+
+    </button>
+
+</section>
+
+<!-- ==========================
+JOURNEY
+========================== -->
+
+<section id="journey">
+
+    <h1>Our Journey ❤️</h1>
+
+    <p>
+
+        Every moment with you is a beautiful memory that I will always cherish.
+
+    </p>
+
+    <button id="nextBtn">
+
+        Continue ❤️
+
+    </button>
+
+</section>
+
+<!-- ==========================
+FIRST MEETING
+========================== -->
+
+<section id="meeting">
+
+    <h2>Chapter One ✨</h2>
+
+    <h1>Our First Meeting</h1>
+
+    <p id="typing"></p>
+
+    <button id="meetingNext">
+
+        Next Chapter ❤️
+
+    </button>
+
+</section>
+
+<!-- ==========================
+PHOTO GALLERY
+========================== -->
+
+<section id="gallery">
+
+    <h2>Beautiful Memories 📸</h2>
+
+    <h1>Our Moments Together ❤️</h1>
+
+    <img id="photo" src="images/photo1.jpg" alt="Memory">
+
+    <p id="photoText">
+
+        Every picture holds a beautiful memory with you.
+
+    </p>
+
+    <div class="galleryButtons">
+
+        <button id="prevPhoto">
+
+            ⬅ Previous
+
+        </button>
+
+        <button id="nextPhoto">
+
+            Next ➡
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+LOVE LETTER
+========================== -->
+
+<section id="letter">
+
+    <h2>A Letter For You 💌</h2>
+
+    <div class="letterBox">
+
+        <p id="letterText"></p>
+
+    </div>
+
+    <button id="letterNext">
+
+        Final Surprise 🎁
+
+    </button>
+
+</section>
+
+<!-- ==========================
+COUNTDOWN
+========================== -->
+
+<section id="countdown">
+
+    <h2>❤️ One Last Surprise ❤️</h2>
+
+    <h1 id="countNumber">3</h1>
+
+</section>
+
+<!-- ==========================
+QUESTION
+========================== -->
+
+<section id="question">
+
+    <h2>Before You Go ❤️</h2>
+
+    <h1>One Last Question...</h1>
+
+    <p>Will you stay with me forever? 🥺❤️</p>
+
+    <div class="questionButtons">
+
+        <button id="yesBtn">
+
+            Yes ❤️
+
+        </button>
+
+        <button id="foreverBtn">
+
+            Forever ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+FINAL PAGE
+========================== -->
+
+<section id="final">
+
+    <h2>🎉 Happy Birthday 🎉</h2>
+
+    <h1>FATEMAH ❤️</h1>
+
+    <h2 id="loveTyping"></h2>
+
+    <p>
+        May Allah bless you with endless happiness, good health, success and a life full of beautiful moments.
+
+        You deserve every smile in this world.
+
+        Happy Birthday once again, Princess. ❤️
+    </p>
+
+    <div id="loveQuote">
+        "You are my favorite chapter,<br>
+        my safest place,<br>
+        and my forever."
+    </div>
+     
+    <!-- ==========================
+MEMORY WALL
+========================== -->
+
+<div id="memoryWall">
+
+    <div class="memoryCard">
+        <img src="images/photo1.jpg" alt="Memory 1">
+    </div>
+
+    <div class="memoryCard">
+        <img src="images/photo2.jpg" alt="Memory 2">
+    </div>
+
+    <div class="memoryCard">
+        <img src="images/photo3.jpg" alt="Memory 3">
+    </div>
+
+    <div class="memoryCard">
+        <img src="images/photo4.jpg" alt="Memory 4">
+    </div>
+
+    <div class="memoryCard">
+        <img src="images/photo5.jpg" alt="Memory 5">
+    </div>
+
+</div>
+
+<div id="photoViewer">
+
+    <button id="closePhotoViewer" type="button">✕</button>
+
+    <img id="viewerImage" src="" alt="Full Memory">
+
+</div>
+
+    <!-- MUSIC CONTROL -->
+
+<button type="button" id="musicBtn">
+    🎵 Music ON
+</button>
+
+    <div id="giftBox">
+
+        <div class="giftEmoji">🎁</div>
+
+        <p>One Last Gift For You ❤️</p>
+
+        <button type="button" id="openGiftBtn">
+            Open My Gift 🎁
+        </button>
+
+    </div>
+
+    <div id="giftMessage">
+        You will always have a special place in my heart. ❤️
+    </div>
+
+     <button type="button" id="secretLetterBtn">
+    💌 Read One More Thing
+</button>
+
+<div id="secretLetter">
+    <p>
+        Fatemah, no matter how many memories we create,
+        I will always treasure every single one of them. ❤️
+    </p>
+
+    <p>
+        You are genuinely one of the most special people in my life.
+        Happy Birthday, Princess. 🌹
+    </p>
+</div>
+
+    <!-- ==========================
+BIRTHDAY CAKE
+========================== -->
+
+<div id="birthdayCake">
+
+    <div class="cake">
+
+        <div class="candle candle1">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle candle2">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle candle3">
+            <div class="flame"></div>
+        </div>
+
+        <div class="cakeTop"></div>
+
+        <div class="cakeBody"></div>
+
+    </div>
+
+    <p id="cakeMessage">
+
+        Make a Wish, Fatemah ❤️
+
+    </p>
+
+    <button type="button" id="blowCandlesBtn">
+
+        Blow the Candles 🕯️
+
+    </button>
+
+</div>
+
+    <button type="button" id="restartBtn">
+        Start Again ❤️
+    </button>
+
+    <div id="cinematicEnding">
+
+    <h1>Happy Birthday, Fatemah ❤️</h1>
+
+    <p>Forever yours... 🌹</p>
+
+</div>
+
+    <div id="fireworks"></div>
+
+</section>
+
+<div id="stars"></div>
+<div id="petals"></div>
+
+<div id="hearts"></div>
+
+<div id="confetti"></div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

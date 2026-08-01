@@ -1,0 +1,1350 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#050505;
+font-family:'Poppins',sans-serif;
+color:white;
+overflow:hidden;
+
+}
+
+
+/* ===========================
+LOADER
+=========================== */
+
+#loader{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:black;
+
+z-index:9999;
+
+}
+
+#loader h1{
+
+font-family:'Great Vibes',cursive;
+font-size:55px;
+color:#FFD700;
+
+animation:pulse 2s infinite;
+
+}
+
+
+/* ===========================
+ALL PAGES
+=========================== */
+
+section{
+
+display:none;
+
+width:100%;
+height:100vh;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:40px;
+
+background:linear-gradient(180deg,#070707,#111);
+
+}
+
+
+/* ===========================
+WELCOME
+=========================== */
+
+#welcome{
+
+background:linear-gradient(180deg,#000,#111);
+
+}
+
+
+/* ===========================
+PASSWORD
+=========================== */
+
+#passwordPage{
+
+background:#080808;
+
+}
+
+
+/* ===========================
+CARD
+=========================== */
+
+.card{
+
+width:380px;
+
+background:#181818;
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 0 30px rgba(255,215,0,.15);
+
+}
+
+
+/* ===========================
+HEADINGS
+=========================== */
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:75px;
+
+color:#FFD700;
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+font-size:38px;
+
+margin-bottom:20px;
+
+}
+
+h3{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:20px;
+
+line-height:1.8;
+
+max-width:850px;
+
+margin-bottom:20px;
+
+}
+
+
+/* ===========================
+BUTTON
+=========================== */
+
+button{
+
+padding:16px 38px;
+
+border:none;
+
+border-radius:50px;
+
+background:#FFD700;
+
+color:black;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+
+/* ===========================
+INPUT
+=========================== */
+
+input{
+
+width:260px;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:18px;
+
+text-align:center;
+
+margin:20px 0;
+
+}
+
+#error{
+
+color:#ff4d4d;
+
+margin-top:10px;
+
+}
+/* ===========================
+HERO
+=========================== */
+
+#hero{
+
+background:linear-gradient(180deg,#000,#111);
+
+}
+
+#hero h1{
+
+font-size:90px;
+
+text-shadow:0 0 20px rgba(255,215,0,.5);
+
+}
+
+
+/* ===========================
+JOURNEY
+=========================== */
+
+#journey{
+
+background:#050505;
+
+}
+
+#journey p{
+
+max-width:800px;
+
+}
+
+
+/* ===========================
+FIRST MEETING
+=========================== */
+
+#meeting{
+
+background:linear-gradient(180deg,#000,#111);
+
+}
+
+#typing{
+
+min-height:180px;
+
+max-width:850px;
+
+font-size:24px;
+
+line-height:2;
+
+color:#ffffff;
+
+margin-top:30px;
+
+}
+
+
+/* ===========================
+PHOTO GALLERY
+=========================== */
+
+#gallery{
+
+background:#000;
+
+}
+
+#photo{
+
+width:350px;
+
+height:450px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:4px solid gold;
+
+box-shadow:0 0 30px rgba(255,215,0,.35);
+
+margin:30px 0;
+
+transition:.5s;
+
+}
+
+.galleryButtons{
+
+display:flex;
+
+gap:20px;
+
+}
+
+
+/* ===========================
+LOVE LETTER
+=========================== */
+
+#letter{
+
+background:#050505;
+
+}
+
+.letterBox{
+
+width:80%;
+
+max-width:900px;
+
+height:420px;
+
+overflow-y:auto;
+
+padding:35px;
+
+background:#111;
+
+border-radius:20px;
+
+border:1px solid rgba(255,215,0,.25);
+
+box-shadow:0 0 25px rgba(255,215,0,.15);
+
+}
+
+#letterText{
+
+text-align:left;
+
+line-height:2;
+
+}
+
+
+/* ===========================
+FINAL PAGE
+=========================== */
+
+#final{
+
+background:linear-gradient(180deg,#000,#111);
+
+}
+
+#final h1{
+
+font-size:100px;
+
+animation:glow 2s infinite;
+
+}
+
+
+/* ===========================
+ANIMATIONS
+=========================== */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes glow{
+
+0%{
+
+text-shadow:0 0 10px gold;
+
+}
+
+50%{
+
+text-shadow:0 0 35px gold;
+
+}
+
+100%{
+
+text-shadow:0 0 10px gold;
+
+}
+
+}
+
+button:hover{
+
+box-shadow:0 0 20px gold;
+
+}
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:gold;
+
+border-radius:10px;
+
+}
+/* ===========================
+FADE ANIMATION
+=========================== */
+
+.fadeIn{
+animation:fadeIn .8s ease forwards;
+}
+/* ===========================
+   FALLING PETALS
+=========================== */
+
+#petals{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.petal{
+    position: absolute;
+    top: -50px;
+    font-size: 22px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall{
+
+    0%{
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+
+}
+
+@keyframes fadeIn{
+
+
+}
+/* ===========================
+   TWINKLING STARS
+=========================== */
+
+
+/* ===========================
+   CURSOR GLOW
+=========================== */
+
+.spark{
+
+position:fixed;
+
+width:10px;
+height:10px;
+
+background:gold;
+
+border-radius:50%;
+
+pointer-events:none;
+
+box-shadow:0 0 15px gold;
+
+animation:sparkFade .8s linear forwards;
+
+z-index:1000;
+
+}
+
+@keyframes sparkFade{
+
+0%{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+100%{
+
+opacity:0;
+transform:scale(3);
+
+}
+
+}
+#countdown{
+
+background:black;
+
+}
+
+#countNumber{
+
+font-size:170px;
+
+color:gold;
+
+animation:pulse 1s infinite;
+
+}
+/* ===========================
+FIREWORKS
+=========================== */
+
+.firework{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#FFD700;
+
+    box-shadow:
+        0 0 8px #FFD700,
+        0 0 18px #FFD700,
+        0 0 30px #FFD700;
+
+    animation:fireworkBurst 1.4s ease-out forwards;
+
+}
+
+@keyframes fireworkBurst{
+
+    0%{
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+        opacity:1;
+
+    }
+
+    70%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translate(var(--x),var(--y))
+            scale(.2);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+@keyframes explode{
+
+0%{
+transform:scale(0);
+opacity:1;
+}
+
+100%{
+transform:translate(var(--x),var(--y)) scale(2);
+opacity:0;
+}
+
+}
+#hearts{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+
+}
+
+.heart{
+
+position:absolute;
+bottom:-40px;
+font-size:24px;
+animation:floatHeart 6s linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh);
+opacity:0;
+
+}
+
+}
+/* ===========================
+QUESTION PAGE
+=========================== */
+
+#question{
+
+background:linear-gradient(180deg,#000,#111);
+
+}
+
+#question h1{
+
+font-size:70px;
+
+color:gold;
+
+margin-bottom:25px;
+
+}
+
+#question p{
+
+font-size:28px;
+
+margin-bottom:40px;
+
+}
+
+#question button{
+
+margin:15px;
+
+min-width:220px;
+
+}
+
+/* ==========================
+   GIFT BOX
+========================== */
+
+#giftBox{
+    margin:25px 0;
+    text-align:center;
+}
+
+.giftEmoji{
+    font-size:90px;
+    animation:giftBounce 1.5s infinite;
+}
+
+#giftBox p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+#giftMessage{
+    display:none;
+    max-width:650px;
+    margin:20px auto;
+    padding:20px 30px;
+    background:#111;
+    border:1px solid rgba(255,215,0,.4);
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(255,215,0,.18);
+    color:#FFD700;
+    font-size:24px;
+    animation:fadeIn .8s ease forwards;
+}
+
+@keyframes giftBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:9998;
+}
+/* ==========================
+BIRTHDAY CAKE
+========================== */
+
+#birthdayCake{
+
+    margin:25px 0;
+
+    text-align:center;
+
+}
+
+.cake{
+
+    position:relative;
+
+    width:180px;
+    height:120px;
+
+    margin:0 auto 15px;
+
+}
+
+.cakeBody{
+
+    position:absolute;
+
+    bottom:0;
+    left:15px;
+
+    width:150px;
+    height:80px;
+
+    background:#7a1f3d;
+
+    border-radius:10px 10px 18px 18px;
+
+    box-shadow:
+        0 10px 0 #4b1026,
+        0 0 25px rgba(255,215,0,.25);
+
+}
+
+.cakeTop{
+
+    position:absolute;
+
+    bottom:60px;
+    left:10px;
+
+    width:160px;
+    height:25px;
+
+    background:#ffd6e0;
+
+    border-radius:50%;
+
+    z-index:2;
+
+}
+
+.cakeTop::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:30px;
+    top:8px;
+
+    width:100px;
+    height:8px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    opacity:.7;
+
+}
+
+.candle{
+
+    position:absolute;
+
+    bottom:83px;
+
+    width:12px;
+    height:38px;
+
+    background:#ffd700;
+
+    border-radius:5px;
+
+    z-index:5;
+
+}
+
+.candle1{
+    left:48px;
+}
+
+.candle2{
+    left:84px;
+}
+
+.candle3{
+    left:120px;
+}
+
+.flame{
+
+    position:absolute;
+
+    top:-18px;
+    left:2px;
+
+    width:8px;
+    height:16px;
+
+    background:#ff9d00;
+
+    border-radius:50% 50% 50% 50%;
+
+    box-shadow:
+        0 0 8px #ffd700,
+        0 0 18px #ff8c00;
+
+    animation:flameGlow .8s infinite alternate;
+
+}
+
+@keyframes flameGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.15);
+    }
+
+}
+
+#cakeMessage{
+
+    color:#ffd700;
+
+    font-size:22px;
+
+    margin:12px 0;
+
+}
+
+#blowCandlesBtn{
+
+    margin-top:5px;
+
+}
+
+/* ==========================
+   MUSIC CONTROL
+========================== */
+
+#musicBtn{
+
+    margin:10px 0;
+
+    padding:12px 25px;
+
+    font-size:16px;
+
+    background:#181818;
+
+    color:#FFD700;
+
+    border:1px solid rgba(255,215,0,.4);
+
+    box-shadow:0 0 15px rgba(255,215,0,.12);
+
+}
+
+#musicBtn:hover{
+
+    background:#FFD700;
+
+    color:black;
+
+}
+
+/* ==========================
+   SECRET LETTER
+========================== */
+
+#secretLetterBtn{
+
+    display:none;
+
+    margin:15px 0;
+
+}
+
+#secretLetter{
+
+    display:none;
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    padding:25px 30px;
+
+    background:#111;
+
+    border:1px solid rgba(255,215,0,.35);
+
+    border-radius:20px;
+
+    box-shadow:0 0 25px rgba(255,215,0,.12);
+
+    animation:fadeIn .8s ease forwards;
+
+}
+
+#secretLetter p{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================
+   STARry NIGHT
+========================== */
+
+#stars{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:0 0 8px #ffffff;
+
+    animation:twinkle 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.25;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.4);
+    }
+
+}
+
+/* ==========================
+   CINEMATIC ENDING
+========================== */
+
+#cinematicEnding{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:rgba(0,0,0,.96);
+
+    z-index:10000;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    opacity:0;
+
+}
+
+#cinematicEnding h1{
+
+    font-size:80px;
+
+    color:#FFD700;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 15px #FFD700,
+        0 0 30px #FFD700;
+
+}
+
+#cinematicEnding p{
+
+    font-size:28px;
+
+    color:white;
+
+}
+
+.cinematicShow{
+
+    display:flex !important;
+
+    animation:cinematicFade 3s ease forwards;
+
+}
+
+@keyframes cinematicFade{
+
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+/* ==========================
+   CINEMATIC MEMORY WALL
+========================== */
+
+#memoryWall{
+
+    width:min(900px, 90vw);
+
+    margin:25px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    perspective:1200px;
+
+    flex-wrap:wrap;
+
+}
+
+.memoryCard{
+
+    width:145px;
+    height:175px;
+
+    padding:7px;
+
+    background:#151515;
+
+    border:1px solid rgba(255,215,0,.28);
+
+    border-radius:14px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.55);
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        filter .45s ease;
+
+}
+
+.memoryCard:nth-child(1){
+    transform:rotate(-7deg) translateY(8px);
+}
+
+.memoryCard:nth-child(2){
+    transform:rotate(4deg) translateY(-8px);
+}
+
+.memoryCard:nth-child(3){
+    transform:rotate(-2deg) translateY(5px);
+}
+
+.memoryCard:nth-child(4){
+    transform:rotate(6deg) translateY(-6px);
+}
+
+.memoryCard:nth-child(5){
+    transform:rotate(-4deg) translateY(8px);
+}
+
+.memoryCard img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:9px;
+
+    display:block;
+
+}
+
+.memoryCard:hover{
+
+    transform:
+        rotate(0deg)
+        translateY(-15px)
+        scale(1.12);
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,.25),
+        0 20px 45px rgba(0,0,0,.65);
+
+    filter:brightness(1.1);
+
+    z-index:10;
+
+}
+
+
+/* ==========================
+   PHOTO VIEWER
+========================== */
+
+#photoViewer{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.94);
+
+    z-index:20000;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(10px);
+
+}
+
+#viewerImage{
+
+    max-width:85vw;
+
+    max-height:85vh;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    border:2px solid rgba(255,215,0,.5);
+
+    box-shadow:0 0 50px rgba(255,215,0,.18);
+
+    animation:viewerOpen .35s ease forwards;
+
+}
+
+#closePhotoViewer{
+
+    position:absolute;
+
+    top:25px;
+
+    right:30px;
+
+    width:50px;
+
+    height:50px;
+
+    padding:0;
+
+    border-radius:50%;
+
+    background:#181818;
+
+    color:#FFD700;
+
+    border:1px solid rgba(255,215,0,.4);
+
+    font-size:22px;
+
+    z-index:2;
+
+}
+
+@keyframes viewerOpen{
+
+    from{
+
+        opacity:0;
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================
+   SMOOTH PAGE TRANSITION
+========================== */
+
+section{
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.pageLeaving{
+    opacity:0 !important;
+    transform:scale(1.03) !important;
+}
+
+.pageEntering{
+    animation:pageEnter .8s ease forwards;
+}
+
+@keyframes pageEnter{
+
+    from{
+        opacity:0;
+        transform:scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}

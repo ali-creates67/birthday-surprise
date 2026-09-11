@@ -6,14 +6,46 @@ window.onload = function () {
 
     setTimeout(function () {
 
+        // Loader hide
         document.getElementById("loader").style.display = "none";
-        document.getElementById("welcome").style.display = "flex";
-        document.getElementById("welcome").classList.add("fadeIn");
+
+        // Cinematic Intro show
+        document.getElementById("cinematic").style.display = "flex";
+
+        // Second text after 3 sec
+        setTimeout(function () {
+
+            document.getElementById("cinema1").style.display = "none";
+            document.getElementById("cinema2").style.display = "block";
+
+        }, 3000);
+
+        // Welcome page after intro
+        setTimeout(function () {
+
+        document.getElementById("blackFade").style.opacity = "1";
+
+setTimeout(function () {
+
+    document.getElementById("cinematic").style.display = "none";
+
+    document.getElementById("welcome").style.display = "flex";
+
+    document.getElementById("welcome").classList.add("fadeIn");
+
+    setTimeout(function () {
+
+        document.getElementById("blackFade").style.opacity = "0";
+
+    }, 400);
+
+}, 1000);
+
+        }, 6000);
 
     }, 2500);
 
 };
-
 
 // ==============================
 // OPEN SURPRISE
@@ -742,5 +774,68 @@ function changePage(fromId, toId){
         },800);
 
     },700);
+
+}
+
+// ==============================
+// TWINKLING STARS
+// ==============================
+
+function createStars() {
+
+    const stars = document.getElementById("stars");
+
+    for (let i = 0; i < 150; i++) {
+
+        const star = document.createElement("div");
+
+        star.className = "star";
+
+        star.style.left = Math.random() * 100 + "vw";
+
+        star.style.top = Math.random() * 100 + "vh";
+
+        star.style.animationDelay = Math.random() * 2 + "s";
+
+        star.style.animationDuration = (1.5 + Math.random() * 3) + "s";
+
+        stars.appendChild(star);
+
+    }
+
+}
+
+createStars();
+
+// ==============================
+// BIRTHDAY CAKE
+// ==============================
+
+function blowCandle(){
+
+    document.getElementById("candle").innerHTML = "💨";
+
+    for(let i = 0; i < 120; i++){
+
+        createConfetti();
+
+    }
+
+    for(let i = 0; i < 40; i++){
+
+        createHeart();
+
+    }
+
+    const msg = document.createElement("div");
+
+    msg.id = "birthdayPopup";
+
+    msg.innerHTML = `
+        <h1>🎉 HAPPY BIRTHDAY FATEMAH 🎉</h1>
+        <p>May Allah bless you with endless happiness ❤️</p>
+    `;
+
+    document.body.appendChild(msg);
 
 }

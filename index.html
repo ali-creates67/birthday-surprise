@@ -17,7 +17,7 @@
 <body>
 
 <audio id="bgMusic" loop>
-    <source src="music/Kali Uchis - Moonlight (Official Lyric Video).mp3" type="audio/mpeg">
+  <source src="music/happier.mp3" type="audio/mpeg">
 </audio>
 
 <!-- ==========================
@@ -29,6 +29,22 @@ LOADER
     <h1>Preparing Something Special... ❤️</h1>
 
 </div>
+
+<!-- ==========================
+CINEMATIC INTRO
+========================== -->
+
+<section id="cinematic">
+
+    <div class="cinemaText" id="cinema1">
+        Every love story begins with a moment...
+    </div>
+
+    <div class="cinemaText" id="cinema2">
+        This is ours. ❤️
+    </div>
+
+</section>
 
 <!-- ==========================
 WELCOME
@@ -313,6 +329,23 @@ MEMORY WALL
     🎵 Music ON
 </button>
 
+     <!-- Birthday Cake -->
+
+<div id="cakeSection">
+
+    <h2>🎂 Make A Wish 🎂</h2>
+
+    <p>Click the candle and make your birthday wish ❤️</p>
+
+    <div id="cake">
+
+        <div id="candle" onclick="blowCandle()">🕯️</div>
+
+        <div id="cakeEmoji">🎂</div>
+
+    </div>
+
+</div> 
     <div id="giftBox">
 
         <div class="giftEmoji">🎁</div>
@@ -402,11 +435,14 @@ BIRTHDAY CAKE
 </section>
 
 <div id="stars"></div>
+<div id="moon"></div>
 <div id="petals"></div>
 
 <div id="hearts"></div>
+<div id="stars"></div>
 
 <div id="confetti"></div>
+<div id="blackFade"></div>
 
 <script src="script.js"></script>
 

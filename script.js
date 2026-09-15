@@ -6,13 +6,9 @@ window.onload = function () {
 
     setTimeout(function () {
 
-        // Loader hide
         document.getElementById("loader").style.display = "none";
-
-        // Cinematic Intro show
         document.getElementById("cinematic").style.display = "flex";
 
-        // Second text after 3 sec
         setTimeout(function () {
 
             document.getElementById("cinema1").style.display = "none";
@@ -20,32 +16,30 @@ window.onload = function () {
 
         }, 3000);
 
-        // Welcome page after intro
         setTimeout(function () {
 
-        document.getElementById("blackFade").style.opacity = "1";
+            document.getElementById("blackFade").style.opacity = "1";
 
-setTimeout(function () {
+            setTimeout(function () {
 
-    document.getElementById("cinematic").style.display = "none";
+                document.getElementById("cinematic").style.display = "none";
+                document.getElementById("welcome").style.display = "flex";
+                document.getElementById("welcome").classList.add("fadeIn");
 
-    document.getElementById("welcome").style.display = "flex";
+                setTimeout(function () {
 
-    document.getElementById("welcome").classList.add("fadeIn");
+                    document.getElementById("blackFade").style.opacity = "0";
 
-    setTimeout(function () {
+                }, 400);
 
-        document.getElementById("blackFade").style.opacity = "0";
-
-    }, 400);
-
-}, 1000);
+            }, 1000);
 
         }, 6000);
 
     }, 2500);
 
 };
+
 
 // ==============================
 // OPEN SURPRISE
@@ -56,6 +50,7 @@ document.getElementById("openBtn").onclick = function () {
     changePage("welcome", "passwordPage");
 
 };
+
 
 // ==============================
 // PASSWORD
@@ -73,12 +68,17 @@ function checkPassword() {
         document.getElementById("hero").classList.add("fadeIn");
 
         const music = document.getElementById("bgMusic");
+
         music.volume = 0.35;
-        music.play();
+
+        music.play().catch(function () {
+            console.log("Music requires user interaction.");
+        });
 
     } else {
 
-        document.getElementById("error").innerHTML = "❌ Wrong Password ❤️";
+        document.getElementById("error").innerHTML =
+            "❌ Wrong Password ❤️";
 
     }
 
@@ -119,7 +119,8 @@ document.getElementById("nextBtn").onclick = function () {
 // TYPING EFFECT
 // ==============================
 
-let text = "Every beautiful story has a beginning... And ours became my favorite chapter. That day I never imagined that someone would become so special to me. Thank you for every smile, every memory and every moment. ❤️";
+let text =
+"Every beautiful story has a beginning... And ours became my favorite chapter. That day I never imagined that someone would become so special to me. Thank you for every smile, every memory and every moment. ❤️";
 
 let index = 0;
 
@@ -137,7 +138,8 @@ function typingEffect() {
 
     if (index < text.length) {
 
-        document.getElementById("typing").innerHTML += text.charAt(index);
+        document.getElementById("typing").innerHTML +=
+            text.charAt(index);
 
         index++;
 
@@ -193,11 +195,14 @@ let current = 0;
 
 function showPhoto() {
 
-    document.getElementById("photo").src = photos[current];
+    document.getElementById("photo").src =
+        photos[current];
 
-    document.getElementById("photoText").innerHTML = captions[current];
+    document.getElementById("photoText").innerHTML =
+        captions[current];
 
 }
+
 
 // ==============================
 // GALLERY BUTTONS
@@ -209,13 +214,16 @@ document.getElementById("nextPhoto").onclick = function () {
 
     nextGalleryPhoto();
 
-    if (document.getElementById("gallery").style.display === "flex") {
+    if (
+        document.getElementById("gallery").style.display === "flex"
+    ) {
 
         autoSlide = setInterval(nextGalleryPhoto, 4000);
 
     }
 
 };
+
 
 document.getElementById("prevPhoto").onclick = function () {
 
@@ -249,7 +257,6 @@ function nextGalleryPhoto() {
         document.getElementById("gallery").style.display = "none";
 
         document.getElementById("letter").style.display = "flex";
-
         document.getElementById("letter").classList.add("fadeIn");
 
         startLetter();
@@ -263,12 +270,12 @@ function nextGalleryPhoto() {
 }
 
 
-
 // ==============================
 // LOVE LETTER
 // ==============================
 
-const letter = `My Dearest Fatemah,
+const letter =
+`My Dearest Fatemah,
 
 Thank you for bringing happiness, peace and beautiful memories into my life.
 
@@ -292,7 +299,8 @@ function typeLetter() {
 
     if (letterIndex < letter.length) {
 
-        document.getElementById("letterText").innerHTML += letter.charAt(letterIndex);
+        document.getElementById("letterText").innerHTML +=
+            letter.charAt(letterIndex);
 
         letterIndex++;
 
@@ -323,7 +331,8 @@ document.getElementById("letterNext").onclick = function () {
 
         if (count > 0) {
 
-            document.getElementById("countNumber").innerHTML = count;
+            document.getElementById("countNumber").innerHTML =
+                count;
 
         } else {
 
@@ -332,7 +341,6 @@ document.getElementById("letterNext").onclick = function () {
             document.getElementById("countdown").style.display = "none";
 
             document.getElementById("question").style.display = "flex";
-
             document.getElementById("question").classList.add("fadeIn");
 
         }
@@ -340,6 +348,40 @@ document.getElementById("letterNext").onclick = function () {
     }, 1000);
 
 };
+
+
+// ==============================
+// QUESTION → FINAL
+// ==============================
+
+function openFinalPage() {
+
+    document.getElementById("question").style.display = "none";
+
+    document.getElementById("final").style.display = "flex";
+    document.getElementById("final").classList.add("fadeIn");
+
+    for (let i = 0; i < 25; i++) {
+
+        setTimeout(function () {
+
+            createFirework();
+
+        }, i * 120);
+
+    }
+
+    startLoveTyping();
+
+    setInterval(createHeart, 500);
+    setInterval(createConfetti, 120);
+
+}
+
+document.getElementById("yesBtn").onclick = openFinalPage;
+
+document.getElementById("foreverBtn").onclick = openFinalPage;
+
 
 // ==============================
 // RESTART
@@ -361,12 +403,13 @@ function createPetal() {
     const petal = document.createElement("div");
 
     petal.className = "petal";
-
     petal.innerHTML = "🌹";
 
-    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.left =
+        Math.random() * 100 + "vw";
 
-    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    petal.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
 
     document.getElementById("petals").appendChild(petal);
 
@@ -390,12 +433,13 @@ function createHeart() {
     const heart = document.createElement("div");
 
     heart.className = "heart";
-
     heart.innerHTML = "❤️";
 
-    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.left =
+        Math.random() * 100 + "vw";
 
-    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    heart.style.fontSize =
+        (18 + Math.random() * 20) + "px";
 
     document.getElementById("hearts").appendChild(heart);
 
@@ -412,7 +456,8 @@ function createHeart() {
 // LOVE TYPING
 // ==============================
 
-const loveText = "I Love You... Forever ❤️";
+const loveText =
+"I Love You... Forever ❤️";
 
 let loveIndex = 0;
 
@@ -430,7 +475,8 @@ function typeLove() {
 
     if (loveIndex < loveText.length) {
 
-        document.getElementById("loveTyping").innerHTML += loveText.charAt(loveIndex);
+        document.getElementById("loveTyping").innerHTML +=
+            loveText.charAt(loveIndex);
 
         loveIndex++;
 
@@ -451,13 +497,22 @@ function createConfetti() {
 
     piece.className = "confetti";
 
-    const colors = ["#FFD700", "#FF4D6D", "#00E5FF", "#7CFF6B", "#FFFFFF"];
+    const colors = [
+        "#FFD700",
+        "#FF4D6D",
+        "#00E5FF",
+        "#7CFF6B",
+        "#FFFFFF"
+    ];
 
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
 
-    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.left =
+        Math.random() * 100 + "vw";
 
-    piece.style.animationDuration = (3 + Math.random() * 2) + "s";
+    piece.style.animationDuration =
+        (3 + Math.random() * 2) + "s";
 
     document.getElementById("confetti").appendChild(piece);
 
@@ -471,94 +526,53 @@ function createConfetti() {
 
 
 // ==============================
-// QUESTION → FINAL
-// ==============================
-
-function openFinalPage() {
-
-    document.getElementById("question").style.display = "none";
-
-    document.getElementById("final").style.display = "flex";
-
-    document.getElementById("final").classList.add("fadeIn");
-
-    for (let i = 0; i < 25; i++) {
-
-    setTimeout(function () {
-
-        createFirework();
-
-    }, i * 120);
-
-}
-
-    startLoveTyping();
-
-    setInterval(createHeart, 500);
-
-    setInterval(createConfetti, 120);
-
-}
-
-document.getElementById("yesBtn").onclick = openFinalPage;
-
-document.getElementById("foreverBtn").onclick = openFinalPage;
-
-// ==============================
-// GIFT BOX
+// OPEN MY GIFT
 // ==============================
 
 document.getElementById("openGiftBtn").onclick = function () {
 
-    document.getElementById("giftMessage").style.display = "block";
+    document.getElementById("openGiftBtn").style.display =
+        "none";
 
-    document.getElementById("secretLetterBtn").style.display = "inline-block";
+    document.getElementById("giftMessage").style.display =
+        "block";
 
-    document.getElementById("openGiftBtn").style.display = "none";
-
-    for (let i = 0; i < 20; i++) {
-
-        const heart = document.createElement("div");
-
-        heart.innerHTML = "❤️";
-
-        heart.style.position = "fixed";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.bottom = "20px";
-        heart.style.fontSize = (25 + Math.random() * 25) + "px";
-        heart.style.zIndex = "9999";
-        heart.style.pointerEvents = "none";
-
-        heart.style.transition = "transform 2s ease, opacity 2s ease";
-
-        document.getElementById("hearts").appendChild(heart);
-
-        setTimeout(function () {
-
-            heart.style.transform =
-                "translateY(-" + (300 + Math.random() * 400) + "px)";
-
-            heart.style.opacity = "0";
-
-        }, 50);
-
-        setTimeout(function () {
-
-            heart.remove();
-
-        }, 2200);
-
-    }
+    document.getElementById("secretLetterBtn").style.display =
+        "inline-block";
 
 };
 
+
 // ==============================
-// BIRTHDAY CAKE
+// SECRET LETTER
+// ==============================
+
+document.getElementById("secretLetterBtn").onclick = function () {
+
+    document.getElementById("secretLetter").style.display =
+        "block";
+
+    document.getElementById("secretLetterBtn").style.display =
+        "none";
+
+    setTimeout(function () {
+
+        document.getElementById("cinematicEnding")
+            .classList.add("cinematicShow");
+
+    }, 8000);
+
+};
+
+
+// ==============================
+// SECOND BIRTHDAY CAKE
 // ==============================
 
 document.getElementById("blowCandlesBtn").onclick = function () {
 
-    const flames = document.querySelectorAll(".flame");
+    const flames =
+        document.querySelectorAll(".flame");
 
     flames.forEach(function (flame) {
 
@@ -569,7 +583,8 @@ document.getElementById("blowCandlesBtn").onclick = function () {
     document.getElementById("cakeMessage").innerHTML =
         "Wish made! Happy Birthday, Fatemah ❤️";
 
-    document.getElementById("blowCandlesBtn").style.display = "none";
+    document.getElementById("blowCandlesBtn").style.display =
+        "none";
 
     for (let i = 0; i < 20; i++) {
 
@@ -593,12 +608,62 @@ document.getElementById("blowCandlesBtn").onclick = function () {
 
 };
 
+
+// ==============================
+// FIRST CAKE CANDLE → GAME
+// ==============================
+
+function blowCandle() {
+
+    // Change candle to blown-out candle
+    document.getElementById("candle").innerHTML = "💨";
+
+    // Celebration
+    for (let i = 0; i < 60; i++) {
+
+        createConfetti();
+
+    }
+
+    for (let i = 0; i < 20; i++) {
+
+        createHeart();
+
+    }
+
+    // Wait for celebration
+    setTimeout(function () {
+
+        // Hide first cake
+        document.getElementById("cakeSection").style.display =
+            "none";
+
+        // Show Tic-Tac-Toe
+        document.getElementById("timoGame").style.display =
+            "block";
+
+        // Start a fresh game
+        startGame();
+
+        // Scroll to game
+        document.getElementById("timoGame").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }, 1200);
+
+}
+
+
 // ==============================
 // MUSIC CONTROL
 // ==============================
 
-const musicBtn = document.getElementById("musicBtn");
-const bgMusic = document.getElementById("bgMusic");
+const musicBtn =
+    document.getElementById("musicBtn");
+
+const bgMusic =
+    document.getElementById("bgMusic");
 
 musicBtn.onclick = function () {
 
@@ -606,17 +671,20 @@ musicBtn.onclick = function () {
 
         bgMusic.play();
 
-        musicBtn.innerHTML = "🎵 Music ON";
+        musicBtn.innerHTML =
+            "🎵 Music ON";
 
     } else {
 
         bgMusic.pause();
 
-        musicBtn.innerHTML = "🔇 Music OFF";
+        musicBtn.innerHTML =
+            "🔇 Music OFF";
 
     }
 
 };
+
 
 // ==============================
 // FIREWORKS
@@ -624,12 +692,17 @@ musicBtn.onclick = function () {
 
 function createFirework() {
 
-    const firework = document.createElement("div");
+    const firework =
+        document.createElement("div");
 
-    firework.className = "firework";
+    firework.className =
+        "firework";
 
-    firework.style.left = (20 + Math.random() * 60) + "vw";
-    firework.style.top = (20 + Math.random() * 40) + "vh";
+    firework.style.left =
+        (20 + Math.random() * 60) + "vw";
+
+    firework.style.top =
+        (20 + Math.random() * 40) + "vh";
 
     firework.style.setProperty(
         "--x",
@@ -641,7 +714,8 @@ function createFirework() {
         (Math.random() * 300 - 150) + "px"
     );
 
-    document.getElementById("fireworks").appendChild(firework);
+    document.getElementById("fireworks")
+        .appendChild(firework);
 
     setTimeout(function () {
 
@@ -651,113 +725,77 @@ function createFirework() {
 
 }
 
-// ==============================
-// SECRET LETTER
-// ==============================
-
-document.getElementById("secretLetterBtn").onclick = function () {
-
-    document.getElementById("secretLetter").style.display = "block";
-
-    document.getElementById("secretLetterBtn").style.display = "none";
-    setTimeout(function () {
-
-    document.getElementById("cinematicEnding")
-        .classList.add("cinematicShow");
-
-}, 8000);
-
-};
 
 // ==============================
-// STARry NIGHT
+// MEMORY WALL
 // ==============================
 
-function createStars(){
+const memoryCards =
+    document.querySelectorAll(".memoryCard");
 
-    const starContainer = document.getElementById("stars");
+const photoViewer =
+    document.getElementById("photoViewer");
 
-    for(let i = 0; i < 80; i++){
+const viewerImage =
+    document.getElementById("viewerImage");
 
-        const star = document.createElement("div");
-
-        star.className = "star";
-
-        star.style.left = Math.random() * 100 + "vw";
-
-        star.style.top = Math.random() * 100 + "vh";
-
-        star.style.animationDelay =
-            Math.random() * 2 + "s";
-
-        star.style.opacity =
-            0.2 + Math.random() * 0.8;
-
-        starContainer.appendChild(star);
-
-    }
-
-}
-
-createStars();
-
-// ==============================
-// CINEMATIC MEMORY WALL
-// ==============================
-
-const memoryCards = document.querySelectorAll(".memoryCard");
-
-const photoViewer = document.getElementById("photoViewer");
-
-const viewerImage = document.getElementById("viewerImage");
-
-const closePhotoViewer = document.getElementById("closePhotoViewer");
+const closePhotoViewer =
+    document.getElementById("closePhotoViewer");
 
 
-memoryCards.forEach(function(card){
+memoryCards.forEach(function (card) {
 
-    card.addEventListener("click", function(){
+    card.addEventListener("click", function () {
 
-        const image = card.querySelector("img");
+        const image =
+            card.querySelector("img");
 
-        viewerImage.src = image.src;
+        viewerImage.src =
+            image.src;
 
-        photoViewer.style.display = "flex";
+        photoViewer.style.display =
+            "flex";
 
     });
 
 });
 
 
-closePhotoViewer.onclick = function(){
+closePhotoViewer.onclick = function () {
 
-    photoViewer.style.display = "none";
+    photoViewer.style.display =
+        "none";
 
 };
 
 
-photoViewer.onclick = function(event){
+photoViewer.onclick = function (event) {
 
-    if(event.target === photoViewer){
+    if (event.target === photoViewer) {
 
-        photoViewer.style.display = "none";
+        photoViewer.style.display =
+            "none";
 
     }
 
 };
 
+
 // ==============================
 // SMOOTH PAGE TRANSITIONS
 // ==============================
 
-function changePage(fromId, toId){
+function changePage(fromId, toId) {
 
-    const fromPage = document.getElementById(fromId);
-    const toPage = document.getElementById(toId);
+    const fromPage =
+        document.getElementById(fromId);
+
+    const toPage =
+        document.getElementById(toId);
 
     fromPage.classList.add("pageLeaving");
 
-    setTimeout(function(){
+    setTimeout(function () {
 
         fromPage.style.display = "none";
 
@@ -767,75 +805,438 @@ function changePage(fromId, toId){
 
         toPage.classList.add("pageEntering");
 
-        setTimeout(function(){
+        setTimeout(function () {
 
             toPage.classList.remove("pageEntering");
 
-        },800);
+        }, 800);
 
-    },700);
-
-}
-
-// ==============================
-// TWINKLING STARS
-// ==============================
-
-function createStars() {
-
-    const stars = document.getElementById("stars");
-
-    for (let i = 0; i < 150; i++) {
-
-        const star = document.createElement("div");
-
-        star.className = "star";
-
-        star.style.left = Math.random() * 100 + "vw";
-
-        star.style.top = Math.random() * 100 + "vh";
-
-        star.style.animationDelay = Math.random() * 2 + "s";
-
-        star.style.animationDuration = (1.5 + Math.random() * 3) + "s";
-
-        stars.appendChild(star);
-
-    }
+    }, 700);
 
 }
 
-createStars();
+
+// ================================
+// TIMO TIC-TAC-TOE GAME ❤️
+// ================================
+
+let board = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+];
+
+let gameOver = false;
+
+let player = "X";
+
+let ai = "O";
+
 
 // ==============================
-// BIRTHDAY CAKE
+// START GAME
 // ==============================
 
-function blowCandle(){
+function startGame() {
 
-    document.getElementById("candle").innerHTML = "💨";
+    board = [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ];
 
-    for(let i = 0; i < 120; i++){
+    gameOver = false;
 
-        createConfetti();
+    const cells =
+        document.querySelectorAll(
+            "#gameBoard button"
+        );
+
+    cells.forEach(function (cell) {
+
+        cell.innerHTML = "";
+        cell.disabled = false;
+
+    });
+
+    document.getElementById("gameMessage").innerHTML =
+        "Your turn, Timo ❤️";
+
+}
+
+
+// ==============================
+// PLAYER MOVE
+// ==============================
+
+function playMove(index) {
+
+    if (
+        gameOver ||
+        board[index] !== ""
+    ) {
+
+        return;
 
     }
 
-    for(let i = 0; i < 40; i++){
+    board[index] = player;
 
-        createHeart();
+    updateBoard();
+
+
+    if (checkWinner(player)) {
+
+        endGame(
+            "🎉 CONGRATULATIONS TIMO ❤️👑"
+        );
+
+        return;
 
     }
 
-    const msg = document.createElement("div");
 
-    msg.id = "birthdayPopup";
+    if (
+        board.every(function (cell) {
+            return cell !== "";
+        })
+    ) {
 
-    msg.innerHTML = `
-        <h1>🎉 HAPPY BIRTHDAY FATEMAH 🎉</h1>
-        <p>May Allah bless you with endless happiness ❤️</p>
-    `;
+        endGame(
+            "It's a draw 😭❤️ Try again!"
+        );
 
-    document.body.appendChild(msg);
+        return;
+
+    }
+
+
+    document.getElementById("gameMessage").innerHTML =
+        "My turn... 🤖❤️";
+
+
+    setTimeout(function () {
+
+        aiMove();
+
+    }, 500);
+
+}
+
+
+// ==============================
+// AI MOVE
+// ==============================
+
+function aiMove() {
+
+    if (gameOver) {
+
+        return;
+
+    }
+
+    let emptyCells = [];
+
+
+    board.forEach(function (cell, index) {
+
+        if (cell === "") {
+
+            emptyCells.push(index);
+
+        }
+
+    });
+
+
+    if (emptyCells.length === 0) {
+
+        return;
+
+    }
+
+
+    // AI tries to win
+
+    for (
+        let i = 0;
+        i < emptyCells.length;
+        i++
+    ) {
+
+        let index =
+            emptyCells[i];
+
+        board[index] = ai;
+
+
+        if (checkWinner(ai)) {
+
+            updateBoard();
+
+            endGame(
+                "Awww Timo 😭❤️ Try again!"
+            );
+
+            return;
+
+        }
+
+        board[index] = "";
+
+    }
+
+
+    // AI blocks Timo
+
+    for (
+        let i = 0;
+        i < emptyCells.length;
+        i++
+    ) {
+
+        let index =
+            emptyCells[i];
+
+        board[index] = player;
+
+
+        if (checkWinner(player)) {
+
+            board[index] = ai;
+
+            updateBoard();
+
+            document.getElementById("gameMessage").innerHTML =
+                "My turn... 😏❤️";
+
+            setTimeout(function () {
+
+                if (!gameOver) {
+
+                    document.getElementById("gameMessage").innerHTML =
+                        "Your turn, Timo ❤️";
+
+                }
+
+            }, 500);
+
+            return;
+
+        }
+
+        board[index] = "";
+
+    }
+
+
+    // Random move
+
+    let randomIndex =
+        emptyCells[
+            Math.floor(
+                Math.random() *
+                emptyCells.length
+            )
+        ];
+
+
+    board[randomIndex] = ai;
+
+    updateBoard();
+
+
+    if (checkWinner(ai)) {
+
+        endGame(
+            "Awww Timo 😭❤️ Try again!"
+        );
+
+        return;
+
+    }
+
+
+    if (
+        board.every(function (cell) {
+            return cell !== "";
+        })
+    ) {
+
+        endGame(
+            "It's a draw 😭❤️ Try again!"
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById("gameMessage").innerHTML =
+        "Your turn, Timo ❤️";
+
+}
+
+
+// ==============================
+// UPDATE BOARD
+// ==============================
+
+function updateBoard() {
+
+    const cells =
+        document.querySelectorAll(
+            "#gameBoard button"
+        );
+
+    cells.forEach(function (cell, index) {
+
+        cell.innerHTML =
+            board[index];
+
+    });
+
+}
+
+
+// ==============================
+// WIN CHECK
+// ==============================
+
+function checkWinner(symbol) {
+
+    const winningCombinations = [
+
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+
+        [0, 4, 8],
+        [2, 4, 6]
+
+    ];
+
+
+    return winningCombinations.some(
+        function (combo) {
+
+            return combo.every(
+                function (index) {
+
+                    return board[index] === symbol;
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+// ==============================
+// END GAME → ONE LAST GIFT
+// ==============================
+
+function endGame(message) {
+
+    gameOver = true;
+
+
+    document.querySelectorAll(
+        "#gameBoard button"
+    ).forEach(function (cell) {
+
+        cell.disabled = true;
+
+    });
+
+
+    document.getElementById("gameMessage").innerHTML =
+        message;
+
+
+    // Celebration if Timo wins
+
+    if (
+        message.includes(
+            "CONGRATULATIONS"
+        )
+    ) {
+
+        for (let i = 0; i < 80; i++) {
+
+            createConfetti();
+
+        }
+
+        for (let i = 0; i < 30; i++) {
+
+            createHeart();
+
+        }
+
+    }
+
+
+    // ==============================
+    // AFTER GAME
+    // SHOW ONE LAST GIFT
+    // ==============================
+
+    setTimeout(function () {
+
+        // Hide game
+        document.getElementById("timoGame").style.display =
+            "none";
+
+
+        // Show gift section
+        const giftBox =
+            document.getElementById("giftBox");
+
+        giftBox.style.display =
+            "block";
+
+
+        // IMPORTANT:
+        // Keep Open My Gift button visible
+        document.getElementById("openGiftBtn").style.display =
+            "inline-block";
+
+
+        // Hide message until she opens gift
+        document.getElementById("giftMessage").style.display =
+            "none";
+
+
+        // Hide secret letter button until gift is opened
+        document.getElementById("secretLetterBtn").style.display =
+            "none";
+
+
+        // Scroll to gift
+        giftBox.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }, 1800);
 
 }

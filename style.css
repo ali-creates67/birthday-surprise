@@ -1649,3 +1649,58 @@ transform:translate(-50%,-50%) scale(1);
 }
 
 }
+
+#timoGame{
+    display:none;
+    text-align:center;
+    margin:60px auto;
+    padding:35px 20px;
+    max-width:500px;
+}
+
+#timoGame h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+#timoGame p{
+    opacity:.8;
+    margin-bottom:25px;
+}
+
+#gameBoard{
+    width:300px;
+    height:300px;
+    margin:25px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+}
+
+#gameBoard button{
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:15px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    font-size:55px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+#gameBoard button:hover{
+    background:rgba(255,255,255,.16);
+    transform:scale(1.03);
+}
+
+#gameMessage{
+    min-height:30px;
+    margin:20px 0;
+}
+
+#newGameBtn{
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+}
